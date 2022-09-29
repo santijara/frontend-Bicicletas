@@ -1,4 +1,4 @@
-export class ReservaModel {
+export class DisponibilidadModel {
 
     id?: string;
     fechaReserva: string;
@@ -6,4 +6,9 @@ export class ReservaModel {
     idBicicleta: any;
     estadoReserva: string;
     fechaDevolucion: string;
+    color: string;
+    latitud: string;
+    longitud: string;
+    modelo: string;
+    userPropietario: string;
 }

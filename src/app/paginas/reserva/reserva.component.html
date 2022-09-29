@@ -28,7 +28,7 @@
                            max="2022-12-31"
                            [(ngModel)]="reserva.fechaReserva" 
                            [ngClass]="{ 'is-invalid': personal_step && personal }" 
-                           name="nacimiento">
+                           name="fechaReserva">
                
                   
   
@@ -51,14 +51,7 @@
                   [(ngModel)]="reserva.userReserva"
                   placeholder="Ingrese nombre completo">
 
-               
-               
-                 
-                
-               
-            
-               
-                  
+
                   <input (click)="previous()" type="button" name="Anterior" class="previous action-button-previous" value="Anterior"/>
                   <input  (click)="next()" type="button" name="Siguiente" class="next action-button" value="Siguiente"/>
               </fieldset>
@@ -79,17 +72,7 @@
                            [(ngModel)]="reserva.fechaDevolucion" 
                            [ngClass]="{ 'is-invalid': personal_step && personal }" 
                            name="fechaDevolucion">
-                 
-            
-                    
-            
-                
-
-                 
-
-
-                
-                  
+                     
                   
                   
                   <input (click)="previous()" type="button" name="Anterior" class="previous action-button-previous" value="Anterior"/>

@@ -1,46 +1,38 @@
 import { Component, OnInit } from '@angular/core';
-import { AutenticacionService } from '../../servicios/autenticacion.service';
-import { ApiService } from '../../servicios/api.service';
-import { BicicletasModel } from 'src/app/modelos/bicicletas';
 import Swal from 'sweetalert2';
+import { ReservaModel } from '../../../modelos/reserva.model';
+import { ApiService } from '../../../servicios/api.service';
 
 @Component({
-  selector: 'app-bicicletas',
-  templateUrl: './bicicletas.component.html',
-  styleUrls: ['./bicicletas.component.css']
+  selector: 'app-verreserva',
+  templateUrl: './verreserva.component.html',
+  styleUrls: ['./verreserva.component.css']
 })
-export class BicicletasComponent implements OnInit {
+export class VerreservaComponent implements OnInit {
 
-  listregistro: BicicletasModel [] = [];
+  reserva: ReservaModel[] = [];
 
-  constructor(public auth: AutenticacionService,
-              public servicio: ApiService) { }
+  constructor(private servicio: ApiService) { }
 
   ngOnInit(): void {
-    
-    // console.log('ngOnInit protegida');
-    // this.auth.userProfile$.subscribe( perfil => {
-    //   console.log(perfil);
-    // });
- this. ListaRegistroBicicletas();
-   
+
+    this.VerReserva();
   }
 
-  ListaRegistroBicicletas(){
+  VerReserva(){
 
-    this.servicio.GetRegistroBici().subscribe(data =>{
+    this.servicio.GetReserva().subscribe(data=>{
       console.log(data);
-      this.listregistro = data;
-    }, error =>{
-     console.log(error);
-    }) ;
+      this.reserva = data;
+    },Error =>{
+      console.log(Error);
+    });
 
   }
 
-  eliminarregistro(id) {
+  eliminarregistro(id){
 
     console.log(id);
-
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton: 'btn btn-success',
@@ -59,8 +51,8 @@ export class BicicletasComponent implements OnInit {
       reverseButtons: true
     }).then((result) => {
       if (result.isConfirmed) {
-        this.servicio.DeleteRegistroBici(id).subscribe(data =>{
-          this.ListaRegistroBicicletas();
+        this.servicio.DeleteReserva(id).subscribe(data =>{
+          this.VerReserva();
           }, error =>{
            console.log(error);
           });
@@ -84,6 +76,6 @@ export class BicicletasComponent implements OnInit {
 
 
   }
-  }
+  
 
-
+}

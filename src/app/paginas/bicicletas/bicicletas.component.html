@@ -36,10 +36,10 @@
           <td data-title="Numero Documento">{{item.modelo}}</td>
           <td data-title="Numero Celular">{{item.userPropietario}}</td>
   
-          <td data-title="Opciones"> <button [routerLink]="['/verdetalleregistro', item.id]" style="color: black;" class="fa fa-light fa-eye"></button>
-            <button  [routerLink]="['/editarregistro', item.id]" style="color: blue;" class="fa fa-thin fa-pen" ></button>
+          <td data-title="Opciones"> <button [routerLink]="['/detallebicicleta', item.id]" style="color: black;" class="fa fa-light fa-eye"></button>
+            <button  [routerLink]="['/editarbicicletas', item.id]" style="color: blue;" class="fa fa-thin fa-pen" ></button>
             <button (click)="eliminarregistro(item.id) " style="color: red;" class="fa fa-sharp fa-solid fa-trash"></button>
-            <button [routerLink]="['/reserva', item.id]" (click)="eliminarregistro(item.id) "  class="btn btn-success">Reservar</button>
+            <button [routerLink]="['/reserva', item.id]"    class="btn btn-success">Reservar</button>
            
           </td>
           

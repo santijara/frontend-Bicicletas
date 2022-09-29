@@ -1,0 +1,38 @@
+<div class="container">
+     
+
+    <div class="table-responsive-md no-more-tables"> 
+     <h1 class="titulo">Registro Reservas</h1>
+    <table class="table">
+      <thead class="bg-dark text-light">
+        <tr>
+          <th scope="col">Estado Reserva</th>
+          <th scope="col">Fecha Reserva</th>
+          <th scope="col">ID</th>
+          <th scope="col">ID Bicicleta</th>
+          <th scope="col">Usuario quien reserva</th>
+          <th scope="col">Fecha Devolucion </th>
+          <th scope="col">Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of reserva">
+            <td data-title="Estado Reserva"> {{item.estadoReserva}}</td>
+            <td data-title="Fecha Reserva">{{item.fechaReserva}}</td>
+          <td data-title="id"> {{item.id}}</td>
+          <td data-title="ID Bicicleta">{{item.idBicicleta}}</td>
+          <td data-title="Usuario quien reserva">{{item.userReserva}}</td>
+          <td data-title="Fecha Devolucion ">{{item.fechaDevolucion}}</td>
+          
+          
+          <td data-title="Opciones"> <button [routerLink]="['/verdetallecolabadmin', item.id]" style="color: green;" class="fa fa-light fa-eye"></button>
+           <button  [routerLink]="['/editarregistrocolabadmin', item.id]" style="color: blue;" class="fa fa-thin fa-pen"></button>
+          <button (click)="eliminarregistro(item.id)" style="color: red;" class="fa fa-sharp fa-solid fa-trash"></button>
+          </td>
+          
+          
+        </tr>
+      </tbody>
+    </table>
+   </div>
+   </div>

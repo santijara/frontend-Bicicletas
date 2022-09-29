@@ -1,0 +1,55 @@
+
+<div class="container m-5">
+    <form [formGroup]="editarform" (ngSubmit)="editarregistro()"
+  >
+        <div class="mb-3">
+    
+          <label for="color" class="form-label">Color</label>
+          <input formControlName="color" type="text" class="form-control" id="color">
+    
+         
+        </div>
+    
+        <div class="mb-3">
+          <label for="modelo" class="form-label">Modelo</label>
+          <input formControlName="modelo" type="text" class="form-control" id="modelo">
+    
+                    </div>
+    
+       
+    
+        <div class="mb-3">
+            <label for="latitud" class="form-label">Latitud</label>
+      
+            <input formControlName="latitud" type="number" class="form-control" id="latitud">
+            </div>
+            <div id="emailHelp" class="form-text">Este campo es numerico, recibe decimales y enteros.</div>
+      
+ 
+    
+          <div class="mb-3">
+            <label for="longitud" class="form-label">Longitud</label>
+      
+            <input formControlName="longitud" type="number" class="form-control" id="longitud">
+            <div id="emailHelp" class="form-text">Este campo es numerico, recibe decimales y enteros.</div>
+    
+    
+      
+          </div>
+    
+    
+          <div class="mb-3">
+            <label for="userPropietario" class="form-label">Nombre del usuario</label>
+      
+            <input formControlName="userPropietario" type="text" class="form-control" id="userPropietario">
+            
+    
+    
+      
+          </div>
+    
+          
+    
+        <button type="submit" class="btn btn-primary">Registrar</button>
+      </form>
+    </div>

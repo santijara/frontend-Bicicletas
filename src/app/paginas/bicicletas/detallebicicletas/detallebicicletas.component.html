@@ -1,0 +1,19 @@
+<div class=" row margen">
+    <div class="card text-center">
+        <div class="card-header">
+          Detalle registro Bicicletas
+        </div>
+        <div class="card-body">
+          <h5 class="card-title" >Color: {{bicicletas.color}} </h5>
+          <p class="card-text" >Modelo: {{bicicletas.modelo}}</p>
+          <p class="card-text">Latitud: {{bicicletas.latitud}}</p>
+          <p class="card-text">Longitud: {{bicicletas.longitud}}</p>
+          <p class="card-text">Usuario: {{bicicletas.userPropietario}}</p>
+          
+          
+        </div>
+        <div class="card-footer text-muted">
+            <a [routerLink]="['/bicicletas']" class="btn btn-primary">Volver</a>
+        </div>
+      </div>
+    </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ReservaModel } from 'src/app/modelos/reserva.model';
 import Swal from 'sweetalert2';
 import { ApiService } from '../../servicios/api.service';
@@ -21,6 +21,7 @@ export class ReservaComponent implements OnInit {
   personalDetails!: FormGroup;
   addressDetails!: FormGroup;
   educationalDetails!: FormGroup;
+  idBicicletaa = '';
   personal_step = false;
   address_step = false;
   education_step = false;
@@ -31,9 +32,15 @@ export class ReservaComponent implements OnInit {
   
     constructor( private servicio: ApiService,
                  private router: Router,
-                 private formBuilder: FormBuilder
+                 private formBuilder: FormBuilder,
+                 private aRoute: ActivatedRoute
                  ) { 
   
+                 this.aRoute.params.subscribe(params =>{
+                    console.log(params['id'])
+
+                    this.idBicicletaa = (params['id'])
+                  })
       
                  }
   
@@ -51,11 +58,13 @@ export class ReservaComponent implements OnInit {
     this.addressDetails = this.formBuilder.group({
       userReserva: ['', Validators.required]
       
+      
         
     });
   
     this.educationalDetails = this.formBuilder.group({
       fechaDevolucion: ['', Validators.required]
+      
        
     });
   
@@ -133,9 +142,10 @@ export class ReservaComponent implements OnInit {
   
           const reserva: ReservaModel ={
         
-            fechaReserva: this.educationalDetails.get('fechaReserva')?.value,
-            userReserva: this.educationalDetails.get('userReserva')?.value,
-            idBicicleta: this.educationalDetails.get('idBicicleta')?.value,
+            fechaReserva: this.personalDetails.get('fechaReserva')?.value,
+            userReserva: this.addressDetails.get('userReserva')?.value,
+            idBicicleta: this.idBicicletaa,
+       
             estadoReserva: this.educationalDetails.get('estadoReserva')?.value,
             fechaDevolucion: this.educationalDetails.get('fechaDevolucion')?.value,
             
@@ -152,7 +162,7 @@ export class ReservaComponent implements OnInit {
       showConfirmButton: false,
       timer: 1500
     })
-    this.router.navigateByUrl ("/agregarbicicletas");
+    this.router.navigateByUrl ("/verreserva");
     
    });
           

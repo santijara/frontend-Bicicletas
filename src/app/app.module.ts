@@ -12,6 +12,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AgregarbicicletasComponent } from './paginas/bicicletas/agregarbicicletas/agregarbicicletas.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReservaComponent } from './paginas/reserva/reserva.component';
+import { EditarbicicletasComponent } from './paginas/bicicletas/editarbicicletas/editarbicicletas.component';
+import { DetallebicicletasComponent } from './paginas/bicicletas/detallebicicletas/detallebicicletas.component';
+import { VerreservaComponent } from './paginas/reserva/verreserva/verreserva.component';
+import { DisponibilidadComponent } from './paginas/disponibilidad/disponibilidad.component';
 
 
 @NgModule({
@@ -23,7 +27,12 @@ import { ReservaComponent } from './paginas/reserva/reserva.component';
     LoginComponent,
     CallbackComponent,
     AgregarbicicletasComponent,
-    ReservaComponent
+    ReservaComponent,
+    EditarbicicletasComponent,
+    DetallebicicletasComponent,
+    VerreservaComponent,
+    DisponibilidadComponent
+
  
    
   ],
