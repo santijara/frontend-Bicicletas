@@ -1,0 +1,42 @@
+<h3 class="mt-3">{{ accion }} Comentario</h3>
+<form [formGroup]="agregarBici" (ngSubmit)="agregarEdtiarComentario()">
+    <div class="mb-3">
+        <label for="color" class="form-label">Color</label>
+        <input formControlName="color" type="text" class="form-control" id="color">
+        <span class="text-danger" *ngIf="agregarBici.get('color')?.invalid && agregarBici.get('color')?.touched">
+            El <strong>color</strong> es requerido
+        </span>
+    </div>
+    <div class="mb-3">
+        <label for="modelo" class="form-label">Modelo</label>
+        <input formControlName="modelo" type="text" class="form-control" id="modelo">
+        <span class="text-danger" *ngIf="agregarBici.get('creador')?.invalid && agregarBici.get('modelo')?.touched">
+            El <strong>modelo</strong> es requerido
+        </span>
+    </div>
+
+    <div class="mb-3">
+        <label for="latitud" class="form-label">Latitud</label>
+        <input formControlName="latitud" type="text" class="form-control" id="latitud">
+        <span class="text-danger" *ngIf="agregarBici.get('creador')?.invalid && agregarBici.get('latitud')?.touched">
+            La <strong>latitud</strong> es requerido
+        </span>
+    </div>
+
+    <div class="mb-3">
+        <label for="longitud" class="form-label">longitud</label>
+        <input formControlName="longitud" type="text" class="form-control" id="longitud">
+        <span class="text-danger" *ngIf="agregarBici.get('creador')?.invalid && agregarBici.get('longitud')?.touched">
+            La <strong>longitud</strong> es requerido
+        </span>
+    </div>
+    <div class="mb-3">
+        <label for="userPropietario" class="form-label">userPropietario</label>
+        <textarea formControlName="userPropietario" class="form-control" id="userPropietario" rows="8"></textarea>
+        <span class="text-danger" *ngIf="agregarBici.get('texto')?.invalid && agregarBici.get('userPropietario')?.touched">
+            El <strong>userPropietario</strong> es requerido
+        </span>
+      </div>
+      <button type="submit" class="btn btn-primary float-end">Aceptar</button>
+      <button type="button" routerLink="/bicicletas" class="btn btn-secondary">Volver</button>
+</form>

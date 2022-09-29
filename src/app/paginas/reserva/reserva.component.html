@@ -1,0 +1,102 @@
+<div class="container py-5">
+  
+    <div class="row"> 
+      <div class="col-md-12 col-md-offset-3">
+
+    <h1 class="titulo">Realiza tu reserva</h1>
+          <form  autocomplete="off" [formGroup]="personalDetails" id="msform">
+              <!-- progressbar -->
+              <ul id="progressbar">
+                  <li [ngClass]="step>=1 ? 'active ' : 'inactive'">Fecha de la reserva</li>
+                  <li [ngClass]="step>=2 ? 'active' : 'inactive'">Persona quien reserva</li>
+                  <li [ngClass]="step==3 ? 'active' : 'inactive'">Fecha de la devolucion</li>
+              </ul>
+              <!-- fieldsets -->
+  
+              <fieldset  *ngIf="step == 1" >
+                
+                  <h2 class="fs-title">Seleccione la fecha inicial de la reserva</h2>
+
+                  
+                  <input class="input100" 
+                           type="date" 
+                           required
+                           formControlName="fechaReserva"
+                           name="fechaReserva" 
+                           id="fechaReserva"
+                           min="1950-01-01"
+                           max="2022-12-31"
+                           [(ngModel)]="reserva.fechaReserva" 
+                           [ngClass]="{ 'is-invalid': personal_step && personal }" 
+                           name="nacimiento">
+               
+                  
+  
+
+        
+
+                  
+                  <input (click)="next()" type="button" name="Siguiente" class="next action-button" value="Siguiente"/>
+              </fieldset>
+          </form>
+           <form [formGroup]="addressDetails" id="msform">
+              <fieldset *ngIf="step == 2" >
+                  <h2 class="fs-title">Ingrese nombre de la persona quien reserva</h2>
+
+                  <input 
+                  type="text" 
+                  name="userReserva"
+                  id="userReserva"
+                  formControlName="userReserva"
+                  [(ngModel)]="reserva.userReserva"
+                  placeholder="Ingrese nombre completo">
+
+               
+               
+                 
+                
+               
+            
+               
+                  
+                  <input (click)="previous()" type="button" name="Anterior" class="previous action-button-previous" value="Anterior"/>
+                  <input  (click)="next()" type="button" name="Siguiente" class="next action-button" value="Siguiente"/>
+              </fieldset>
+          </form>
+           <form [formGroup]="educationalDetails" id="msform">
+              <fieldset *ngIf="step == 3">
+                  <h2 class="fs-title">Ingrese fecha de la devolucion </h2>
+
+                 
+                  <input class="input100" 
+                           type="date" 
+                           required
+                           formControlName="fechaDevolucion"
+                           name="fechaDevolucion" 
+                           id="fechaDevolucion"
+                           min="1950-01-01"
+                           max="2022-12-31"
+                           [(ngModel)]="reserva.fechaDevolucion" 
+                           [ngClass]="{ 'is-invalid': personal_step && personal }" 
+                           name="fechaDevolucion">
+                 
+            
+                    
+            
+                
+
+                 
+
+
+                
+                  
+                  
+                  
+                  <input (click)="previous()" type="button" name="Anterior" class="previous action-button-previous" value="Anterior"/>
+                  <input (click)="submit()"type="submit" name="Enviar" style="background-color: rgb(60, 62, 172);" class="submit action-button" value="Enviar"/>
+              </fieldset>
+          </form>
+  
+      </div>
+  </div>
+  </div>

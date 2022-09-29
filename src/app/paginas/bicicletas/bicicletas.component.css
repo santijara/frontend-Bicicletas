@@ -1,0 +1,119 @@
+.home{
+    display: flex;
+    flex-wrap: wrap;
+  
+   
+    
+  }
+
+  .in-flex{
+    flex: 1;
+    min-width: 200px;
+   
+
+  }
+
+  .in-flex:first-child{
+      
+    flex: 1;
+    padding: 10px;
+    margin: 50px;
+    margin-bottom: 0px;
+    font-size: 24px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+  .in-flex thead{
+
+    
+    padding: 5px;
+    background-color: rgb(193, 205, 207);
+    margin: 10px;
+    
+  }
+
+  .textoparrafo{
+   
+    color: rgb(5, 4, 4);
+    font-size: 24px;
+    font-weight:lighter;
+  
+  }
+
+  
+  .titulo{
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    font-size: 25px;
+  }
+
+  /* tabla computador */
+
+
+
+  .container tr td button{
+
+    font-size: 18px;
+    margin: 0 5px;
+    align-self: center;
+
+  }
+
+  .container .button1{
+
+    font-size: 18px;
+    margin:  1px;
+    
+   
+
+  }
+  /* tabla mobile */
+
+
+
+
+
+
+  @media only screen and (max-width: 800px){
+
+   .no-more-tables tbody, 
+   .no-more-tables tr, 
+   .no-more-tables td{
+
+    display: block;
+
+   }
+
+   .no-more-tables thead tr{
+
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+
+   }
+
+   .no-more-tables td{
+    position: relative;
+    padding-left: 60%;
+    border: beige;
+    border-bottom: none;
+    
+
+   }
+
+   .no-more-tables td::before{
+     content:  attr(data-title);
+     position: absolute;
+     left: 55px;
+     font-weight: bold;
+   }
+
+   .no-more-tables tr{
+   
+    
+    border-bottom: 2px solid rgb(32, 31, 31);
+   }
+
+  }
+
