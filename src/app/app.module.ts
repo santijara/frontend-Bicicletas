@@ -16,6 +16,8 @@ import { EditarbicicletasComponent } from './paginas/bicicletas/editarbicicletas
 import { DetallebicicletasComponent } from './paginas/bicicletas/detallebicicletas/detallebicicletas.component';
 import { VerreservaComponent } from './paginas/reserva/verreserva/verreserva.component';
 import { DisponibilidadComponent } from './paginas/disponibilidad/disponibilidad.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { GooglemapComponent } from './paginas/googlemap/googlemap.component';
 
 
 @NgModule({
@@ -31,7 +33,8 @@ import { DisponibilidadComponent } from './paginas/disponibilidad/disponibilidad
     EditarbicicletasComponent,
     DetallebicicletasComponent,
     VerreservaComponent,
-    DisponibilidadComponent
+    DisponibilidadComponent,
+    GooglemapComponent
 
  
    
@@ -41,7 +44,8 @@ import { DisponibilidadComponent } from './paginas/disponibilidad/disponibilidad
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

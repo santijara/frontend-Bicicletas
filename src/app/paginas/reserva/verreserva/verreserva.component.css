@@ -5,3 +5,68 @@
     width: 100%;
     font-size: 25px;
   }
+
+  .container tr td button{
+
+    font-size: 18px;
+    margin: 0 5px;
+    align-self: center;
+
+  }
+
+  .container .button1{
+
+    font-size: 18px;
+    margin:  1px;
+    
+   
+
+  }
+  /* tabla mobile */
+
+
+
+
+
+
+  @media only screen and (max-width: 800px){
+
+   .no-more-tables tbody, 
+   .no-more-tables tr, 
+   .no-more-tables td{
+
+    display: block;
+
+   }
+
+   .no-more-tables thead tr{
+
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+
+   }
+
+   .no-more-tables td{
+    position: relative;
+    padding-left: 60%;
+    border: beige;
+    border-bottom: none;
+    
+
+   }
+
+   .no-more-tables td::before{
+     content:  attr(data-title);
+     position: absolute;
+     left: 55px;
+     font-weight: bold;
+   }
+
+   .no-more-tables tr{
+   
+    
+    border-bottom: 2px solid rgb(32, 31, 31);
+   }
+
+  }

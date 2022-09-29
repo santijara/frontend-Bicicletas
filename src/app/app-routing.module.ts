@@ -21,21 +21,27 @@ const routes: Routes = [
   { path: 'bicicletas' , component: BicicletasComponent,
   canActivate: [ ProtegerGuard ] },
 
-  { path: 'agregarbicicletas' , component: AgregarbicicletasComponent },
+  { path: 'agregarbicicletas' , component: AgregarbicicletasComponent,
+  canActivate: [ ProtegerGuard ] },
 
-  { path: 'detallebicicleta/:id' , component: DetallebicicletasComponent },
+  { path: 'detallebicicleta/:id' , component: DetallebicicletasComponent,
+  canActivate: [ ProtegerGuard ] },
 
 
-  { path: 'editarbicicletas/:id' , component: EditarbicicletasComponent },
+  { path: 'editarbicicletas/:id' , component: EditarbicicletasComponent,
+  canActivate: [ ProtegerGuard ] },
 
 // Reservas
-  { path: 'reserva/:id' , component: ReservaComponent },
+  { path: 'reserva/:id' , component: ReservaComponent,
+  canActivate: [ ProtegerGuard ] },
 
-  { path: 'verreserva' , component: VerreservaComponent },
+  { path: 'verreserva' , component: VerreservaComponent,
+  canActivate: [ ProtegerGuard ] },
 
 
 // Disponibilidad
-{ path: 'disponibilidad' , component: DisponibilidadComponent },
+{ path: 'disponibilidad' , component: DisponibilidadComponent,
+canActivate: [ ProtegerGuard ] },
 
 
   { path: 'login' , component: LoginComponent },
