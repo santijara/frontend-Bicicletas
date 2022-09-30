@@ -48,7 +48,7 @@ canActivate: [ ProtegerGuard ] },
 { path: 'detalledisponibilidad/:id' , component: DetalledisponibilidadComponent
  },
 
-{ path: 'googlemaps' , component: GooglemapComponent,
+{ path: 'googlemaps/:latitud/:id' , component: GooglemapComponent,
 canActivate: [ ProtegerGuard ] },
 
 

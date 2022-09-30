@@ -21,7 +21,7 @@ export class ReservaComponent implements OnInit {
   personalDetails!: FormGroup;
   addressDetails!: FormGroup;
   educationalDetails!: FormGroup;
-  idBicicletaa = '';
+  idBicicletaa= '';
   personal_step = false;
   address_step = false;
   education_step = false;

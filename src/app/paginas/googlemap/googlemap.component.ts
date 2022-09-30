@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 
 
 
+
 @Component({
   selector: 'app-googlemap',
   templateUrl: './googlemap.component.html',
@@ -13,12 +14,19 @@ import { ActivatedRoute } from '@angular/router';
 export class GooglemapComponent implements OnInit {
 
   mapa: BicicletasModel[] = [];
+  idBicicletaa: '';
+  id:any;
+  latitud ='';
+  longitud: '';
 
-  position: any;
+position: any
 
 
   constructor(private servicio: ApiService,
-              private aRoute: ActivatedRoute) {
+              private aRoute: ActivatedRoute,
+             ) {
+
+    
 
     
 
@@ -26,10 +34,43 @@ export class GooglemapComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.DatosMapa();
+    
+
+    this.Datosmapa();
 
    
   }
+
+
+  Datosmapa(){
+
+ 
+    this.aRoute.params.subscribe(params =>{
+      console.log(params['latitud'])
+      this.latitud = (params['latitud'])
+      
+      this.aRoute.params.subscribe(params =>{
+        console.log(params['id'])
+        this.longitud=(params['id'])
+
+      
+
+      this.position={
+
+  
+        lat: +this.latitud,
+      
+        lng: +this.longitud,
+      }
+    })
+  })
+
+
+
+  }
+
+
+
 
 
   label = {
@@ -37,26 +78,9 @@ export class GooglemapComponent implements OnInit {
     text: 'marcador'
   }
 
-  DatosMapa(){
-
-    this.servicio.GetRegistroBici().subscribe(data=>{
-
-      console.log(data[3].latitud);
-      console.log(data[3].longitud);
-      
-
-      this.position={
-        lat: data[3].latitud,
-  
-        lng: data[3].longitud
-      }
-
-    })
 
 
-  
-  
-  }
+
 
 
 }

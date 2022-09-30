@@ -41,8 +41,10 @@
             <button [routerLink]="['/detallebicicleta', item.id]" style="color: black;" class="fa fa-light fa-eye"></button>
             <button  [routerLink]="['/editarbicicletas', item.id]" style="color: blue;" class="fa fa-thin fa-pen" ></button>
             <button (click)="eliminarregistro(item.id) " style="color: red;" class="fa fa-sharp fa-solid fa-trash"></button>
-            <button [routerLink]="['/googlemaps']" class="fa fa-thin fa-map" ></button>
-            <button [routerLink]="['/reserva', item.id]"    class="btn btn-success">Reservar</button>
+            
+            <button [routerLink]="['/googlemaps',item.latitud, item.longitud]" class="fa fa-thin fa-map" ></button>
+
+            <button  [routerLink]="['/reserva', item.id]"    class="btn btn-success">Reservar</button>
             
              
         

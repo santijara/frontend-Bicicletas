@@ -44,6 +44,10 @@ export class BicicletasComponent implements OnInit {
     this.formModal.hide();
   }
 
+  info(latitud:any, longitud:any){
+
+  }
+
 
   ListaRegistroBicicletas(){
 
@@ -101,6 +105,11 @@ export class BicicletasComponent implements OnInit {
       }
     })
 
+
+  }
+
+
+  Verinfo(latitud:string, longitud:string){
 
   }
   }
