@@ -1,1 +1,22 @@
-<p>googlemap works!</p>
+
+
+<div class="position container m-5">
+    <div class="row">
+<google-map width="800" height="600"   [center]="this.position">
+    <map-marker 
+
+    [position]="this.position"
+    [label]="label"
+    >
+
+    </map-marker>
+</google-map>
+
+
+
+</div>
+<div class="margin-top:50px">
+    <button [routerLink]="'/bicicletas'" class="btn btn-primary">volver</button>
+</div>
+</div>
+

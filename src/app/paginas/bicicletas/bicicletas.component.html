@@ -9,6 +9,7 @@
     <div class="table-responsive-md no-more-tables"> 
       <h1 class="titulo">Registro Bicicletas</h1>
 
+
       <div class="row mt-3">
       
         <div class="button1">
@@ -36,12 +37,19 @@
           <td data-title="Numero Documento">{{item.modelo}}</td>
           <td data-title="Numero Celular">{{item.userPropietario}}</td>
   
-          <td data-title="Opciones"> <button [routerLink]="['/detallebicicleta', item.id]" style="color: black;" class="fa fa-light fa-eye"></button>
+          <td data-title="Opciones"> 
+            <button [routerLink]="['/detallebicicleta', item.id]" style="color: black;" class="fa fa-light fa-eye"></button>
             <button  [routerLink]="['/editarbicicletas', item.id]" style="color: blue;" class="fa fa-thin fa-pen" ></button>
             <button (click)="eliminarregistro(item.id) " style="color: red;" class="fa fa-sharp fa-solid fa-trash"></button>
+            <button [routerLink]="['/googlemaps']" class="fa fa-thin fa-map" ></button>
             <button [routerLink]="['/reserva', item.id]"    class="btn btn-success">Reservar</button>
-           
+            
+             
+        
+
           </td>
+
+          
           
         </tr>
       </tbody>
@@ -49,3 +57,6 @@
   </div>
   </div>
   
+
+ 
+ 

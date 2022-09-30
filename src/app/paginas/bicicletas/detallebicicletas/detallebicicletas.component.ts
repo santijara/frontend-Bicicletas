@@ -10,7 +10,7 @@ import { ApiService } from '../../../servicios/api.service';
 })
 export class DetallebicicletasComponent implements OnInit {
 
-  bicicletas: BicicletasModel = new BicicletasModel;
+  bicicletas: BicicletasModel;
 
   id: number;
 
@@ -23,6 +23,8 @@ export class DetallebicicletasComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.bicicletas = new BicicletasModel;
+
     this.GetDetalle();
 
    
@@ -33,6 +35,7 @@ export class DetallebicicletasComponent implements OnInit {
     this.servicio.GetIdRegistroBici(this.id)
     .subscribe(data=>{
       this.bicicletas = data;
+      console.log(data);
     })
   }
 

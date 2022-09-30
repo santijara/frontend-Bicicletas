@@ -11,6 +11,8 @@ import { EditarbicicletasComponent } from './paginas/bicicletas/editarbicicletas
 import { DetallebicicletasComponent } from './paginas/bicicletas/detallebicicletas/detallebicicletas.component';
 import { VerreservaComponent } from './paginas/reserva/verreserva/verreserva.component';
 import { DisponibilidadComponent } from './paginas/disponibilidad/disponibilidad.component';
+import { GooglemapComponent } from './paginas/googlemap/googlemap.component';
+import { DetalledisponibilidadComponent } from './paginas/disponibilidad/detalledisponibilidad/detalledisponibilidad.component';
 
 const routes: Routes = [
 
@@ -41,6 +43,12 @@ const routes: Routes = [
 
 // Disponibilidad
 { path: 'disponibilidad' , component: DisponibilidadComponent,
+canActivate: [ ProtegerGuard ] },
+
+{ path: 'detalledisponibilidad/:id' , component: DetalledisponibilidadComponent
+ },
+
+{ path: 'googlemaps' , component: GooglemapComponent,
 canActivate: [ ProtegerGuard ] },
 
 

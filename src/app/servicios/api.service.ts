@@ -11,28 +11,28 @@ export class ApiService {
 
   bicicletas: BicicletasModel;
 
-  idregistro = "";
+ 
 
   reserva:ReservaModel;
+
+  private MyUrl ='http://20.62.224.174:8084/api/Bicicletas/';
   
 
 
 
   constructor(private http: HttpClient) {
 
-    this.GetRegistroBici().subscribe(data=>{
-      console.log(data)
-    });
+    // this.GetRegistroBici().subscribe(data=>{
+    //   console.log(data)
+    // });
 
-    this.GetReserva().subscribe(data=>{
-      console.log(data)
-    });
+    // this.GetReserva().subscribe(data=>{
+    //   console.log(data)
+    // });
 
-    this.GetIdRegistroBici(this.idregistro).subscribe(data=>{
-      console.log(data)
-      
+  
 
-    });
+    this.GetDisponibilidad();
 
  
    }
@@ -49,7 +49,15 @@ export class ApiService {
    GetIdRegistroBici(id:any): Observable<BicicletasModel>{
 
     
-    return this.http.get<BicicletasModel>( 'http://20.62.224.174:8084/api/Bicicletas/'+ id);
+    return this.http.get<BicicletasModel>( this.MyUrl + id).pipe(
+      map((resp: any)=>{
+      
+ 
+       console.log(resp)
+        return resp;
+
+      })
+      );
    }
   
    PostRegistroBici(bicicletas: BicicletasModel):Observable<any> {
@@ -107,10 +115,32 @@ export class ApiService {
 
   GetDisponibilidad():Observable<any>{
 
-    return this.http.get('http://20.237.77.245:8085/api/Disponibilidad')
+    return this.http.get('http://20.237.77.245:8085/api/Disponibilidad').pipe(
+      map((resp: any)=>{
+      
+ 
+       console.log('Entreo en el map')
+        return resp;
+
+      })
+      );
+
 
   }
 
+  GetIdDisponibilidad(id:number):Observable<any>{
+
+    return this.http.get('http://20.237.77.245:8085/api/Disponibilidad/'+ id)
+  }
+  
+
+  //Buscador Mapa
+
+  GetIdRegistroMapa(id:any): Observable<BicicletasModel>{
+
+    
+    return this.http.get<BicicletasModel>( 'http://20.62.224.174:8084/api/Bicicletas/'+ id);
+   }
   
 
 }

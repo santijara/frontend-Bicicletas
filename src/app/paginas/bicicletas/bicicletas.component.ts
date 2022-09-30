@@ -4,12 +4,17 @@ import { ApiService } from '../../servicios/api.service';
 import { BicicletasModel } from 'src/app/modelos/bicicletas';
 import Swal from 'sweetalert2';
 
+declare var window: any;
+
 @Component({
   selector: 'app-bicicletas',
   templateUrl: './bicicletas.component.html',
   styleUrls: ['./bicicletas.component.css']
 })
 export class BicicletasComponent implements OnInit {
+
+  formModal: any;
+  public previsualizacion: string;
 
   listregistro: BicicletasModel [] = [];
 
@@ -23,8 +28,22 @@ export class BicicletasComponent implements OnInit {
     //   console.log(perfil);
     // });
  this. ListaRegistroBicicletas();
+
+ this.formModal = new window.bootstrap.Modal(
+
+  document.getElementById("exampleModal")
+);
    
   }
+
+  openModal(){
+    this.formModal.show();
+  }
+
+  doSomething(){
+    this.formModal.hide();
+  }
+
 
   ListaRegistroBicicletas(){
 

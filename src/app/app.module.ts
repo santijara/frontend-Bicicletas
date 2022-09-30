@@ -18,6 +18,7 @@ import { VerreservaComponent } from './paginas/reserva/verreserva/verreserva.com
 import { DisponibilidadComponent } from './paginas/disponibilidad/disponibilidad.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { GooglemapComponent } from './paginas/googlemap/googlemap.component';
+import { DetalledisponibilidadComponent } from './paginas/disponibilidad/detalledisponibilidad/detalledisponibilidad.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { GooglemapComponent } from './paginas/googlemap/googlemap.component';
     DetallebicicletasComponent,
     VerreservaComponent,
     DisponibilidadComponent,
-    GooglemapComponent
+    GooglemapComponent,
+    DetalledisponibilidadComponent
 
  
    
